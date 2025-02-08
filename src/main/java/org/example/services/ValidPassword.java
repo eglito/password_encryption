@@ -1,6 +1,5 @@
 package org.example.services;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
@@ -21,7 +20,8 @@ public class ValidPassword {
         String regex = "^(?=.*\\d).{8,}$";
         if(Pattern.matches(regex, this.password)){
             return true;
-        } throw new IllegalAccessException("A senha deve ser de no mínimo 8 caracteres");
+        } throw new IllegalAccessException("A senha deve ter entre 8 e 30 caracteres e conter " +
+                                            "uma letra maiúscula, um símbolo e um número");
     }
 }
 
