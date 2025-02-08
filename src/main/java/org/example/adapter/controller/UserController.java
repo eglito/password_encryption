@@ -2,7 +2,7 @@ package org.example.adapter.controller;
 
 import org.example.adapter.UserRepository;
 import org.example.entity.UserEntity;
-import org.example.services.PasswordHash;
+import org.example.services.PasswordBcrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +17,9 @@ public class UserController {
 
     @Autowired
     private UserRepository repository;
-    private PasswordHash passwordHash;
+    private PasswordBcrypt passwordHash;
 
-    public UserController(UserRepository repository, PasswordHash passwordHash){
+    public UserController(UserRepository repository, PasswordBcrypt passwordHash){
         this.repository = repository;
         this.passwordHash = passwordHash;
     }
